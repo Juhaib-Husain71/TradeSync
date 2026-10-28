@@ -1,0 +1,163 @@
+/* Layout mirrors the real dashboard: fixed-width watchlist on the left, content on the right */
+.sk-app {
+  display: flex;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ---------- Left: watchlist ---------- */
+.sk-watchlist {
+  width: 32%;
+  min-width: 320px;
+  max-width: 480px;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-indices {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90px;
+  padding: 0 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.sk-index {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.sk-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  height: 60px;
+  border-bottom: 1px solid #eee;
+}
+
+.sk-list {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 0 0 50px;
+}
+
+.sk-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+  padding-right: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.sk-list-row:first-child {
+  margin-top: 12px;
+}
+
+.sk-list-row-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ---------- Right: main ---------- */
+.sk-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sk-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 0 30px 0 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.sk-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.sk-nav-divider {
+  width: 1px;
+  height: 36px;
+  background: #eee;
+}
+
+.sk-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+.sk-section {
+  border-bottom: 1px solid #eee;
+}
+
+.sk-greeting {
+  padding: 120px 0 40px;
+}
+
+.sk-equity {
+  padding: 60px 0 90px;
+}
+
+.sk-equity-body {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  margin-top: 80px;
+}
+
+.sk-equity-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sk-equity-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 40px;
+  border-left: 1px solid #eee;
+}
+
+.sk-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sk-holdings {
+  padding: 90px 0;
+}
+
+/* ---------- Small screens: hide the watchlist like most dashboards do ---------- */
+@media (max-width: 900px) {
+  .sk-watchlist {
+    display: none;
+  }
+  .sk-nav-links {
+    gap: 16px;
+  }
+  .sk-equity-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .sk-equity-right {
+    padding-left: 0;
+    border-left: none;
+  }
+}
