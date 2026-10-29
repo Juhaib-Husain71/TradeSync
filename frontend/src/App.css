@@ -1,0 +1,30 @@
+.nav-link{
+    margin-left: 25px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.acop-steps{
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.open-account-btn{
+    width: 20%;
+    margin: 0 auto;
+}
+
+.menu {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.menu.selected {
+  color: rgb(47, 107, 225);
+}
