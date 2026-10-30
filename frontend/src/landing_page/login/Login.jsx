@@ -47,7 +47,7 @@ function Login() {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "https://tradesync-ikxa.onrender.com/users/login",
+                `${import.meta.env.VITE_API_URL}/users/login`,
                 {
                 ...inputValue,
                 },
@@ -58,7 +58,7 @@ function Login() {
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => {
-                    window.location.replace("https://tradesync-dashboard.vercel.app");
+                    window.location.replace(import.meta.env.VITE_DASHBOARD_URL);
                 }, 1000);
             } else {
                 handleError(message);

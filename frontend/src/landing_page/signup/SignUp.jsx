@@ -49,7 +49,7 @@ function SignUp() {
         
         try {
             const { data } = await axios.post(
-                "https://tradesync-ikxa.onrender.com/users/signup",
+                `${import.meta.env.VITE_API_URL}/users/signup`,
                 {
                 ...inputValue,
                 },
@@ -59,7 +59,7 @@ function SignUp() {
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => {
-                    window.location.replace("https://tradesync-dashboard.vercel.app");
+                    window.location.replace(import.meta.env.VITE_DASHBOARD_URL);
                 }, 1000);
             } else {
                 handleError(message);
@@ -80,7 +80,6 @@ function SignUp() {
             <div className="col-4">
                 <p><Link to="/">-Back To Home</Link></p>
                 <h2 className="mt-3">Signup now</h2>
-                {/* <p>Or track your existing application.</p> */}
 
                 <form onSubmit={handleSubmit} noValidate className="needs-validation">
                     <div className="mb-3 mt-3">
