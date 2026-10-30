@@ -14,7 +14,7 @@ module.exports.Signup = async (req, res, next) => {
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 3 * 24 * 60 * 60 * 1000,
-      // sameSite: "lax",
+      sameSite: "none",
     });
     res
       .status(201)
@@ -44,7 +44,7 @@ module.exports.Login = async (req, res, next) => {
      res.cookie("token", token, {
       httpOnly: true,
       maxAge: 3 * 24 * 60 * 60 * 1000,
-      // sameSite: "lax",
+      sameSite: "none",
      });
      res.status(201).json({ message: "User logged in successfully", success: true });
      next()
@@ -57,7 +57,8 @@ module.exports.Login = async (req, res, next) => {
 module.exports.Logout = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    // sameSite: "lax",
+    sameSite: "none",
+
   });
 
   res.status(200).json({

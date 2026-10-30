@@ -5,23 +5,31 @@ import "./DashboardSkeleton.css";
 const WATCHLIST_ROWS = 9;
 const NAV_ITEMS = [70, 60, 60, 45, 45, 40]; // Dashboard, Holdings, Positions, Orders, Funds, Apps
 
-/* ---------- Left panel ---------- */
-const IndicesSkeleton = () => (
-  <div className="sk-indices">
-    {[0, 1].map((i) => (
-      <div className="sk-index" key={i}>
+/* --- Left panel --- */
+const WatchlistSkeleton = () => (
+  <aside className="sk-watchlist">
+    <div className="sk-indices">
+      <div className="sk-index">
         <Skeleton width={65} height={14} />
         <Skeleton width={40} height={14} />
       </div>
-    ))}
-  </div>
-);
+      <div className="sk-index">
+        <Skeleton width={65} height={14} />
+        <Skeleton width={40} height={14} />
+      </div>
+    </div>
 
-const SearchSkeleton = () => (
-  <div className="sk-search">
-    <Skeleton width={260} height={16} />
-    <Skeleton width={45} height={16} />
-  </div>
+    <div className="sk-search">
+      <Skeleton width={260} height={16} />
+      <Skeleton width={45} height={16} />
+    </div>
+
+    <div className="sk-list">
+      {Array.from({ length: WATCHLIST_ROWS }).map((_, i) => (
+        <WatchlistRowSkeleton key={i} />
+      ))}
+    </div>
+  </aside>
 );
 
 const WatchlistRowSkeleton = () => (
@@ -35,19 +43,7 @@ const WatchlistRowSkeleton = () => (
   </div>
 );
 
-const WatchlistSkeleton = () => (
-  <aside className="sk-watchlist">
-    <IndicesSkeleton />
-    <SearchSkeleton />
-    <div className="sk-list">
-      {Array.from({ length: WATCHLIST_ROWS }).map((_, i) => (
-        <WatchlistRowSkeleton key={i} />
-      ))}
-    </div>
-  </aside>
-);
-
-/* ---------- Right panel ---------- */
+/* --- Right panel --- */
 const NavSkeleton = () => (
   <header className="sk-nav">
     <Skeleton width={64} height={40} borderRadius={6} /> {/* logo */}
@@ -104,7 +100,7 @@ const MainSkeleton = () => (
   </main>
 );
 
-/* ---------- Page ---------- */
+/* --- Page --- */
 export default function DashboardSkeleton() {
   return (
     <SkeletonTheme baseColor="#ececec" highlightColor="#f7f7f7">

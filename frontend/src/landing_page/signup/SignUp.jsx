@@ -46,7 +46,6 @@ function SignUp() {
 
     const handleSubmit =  async (e) => {
         e.preventDefault();
-        // console.log("username: ", inputValue.username, "pass: ", inputValue.password, "email: ", inputValue.email);
         
         try {
             const { data } = await axios.post(
@@ -61,19 +60,14 @@ function SignUp() {
                 handleSuccess(message);
                 setTimeout(() => {
                     window.location.replace("http://localhost:5174");
-                }, 1500);
+                }, 1000);
             } else {
                 handleError(message);
             }
         } catch (error) {
             console.log(error);
         }
-        setInputValue({
-            ...inputValue,
-            email: "",
-            password: "",
-            username: "",
-        });
+        
     };
 
   return (

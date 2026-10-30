@@ -21,7 +21,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors(
   {
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: ["https://tradesync-login.vercel.app", "https://tradesync-dashboard.vercel.app"],
     credentials: true,
   }
 ))   //^to connect dashboard with backend
@@ -35,7 +35,7 @@ const PORT = process.env.PORT || 3001;
 const url = process.env.Mongo_URL;
 
 app.listen(PORT, () => {
-    console.log("app is listening on PORT 3001");
+    console.log(`app is listening on PORT ${PORT}`);
 });
 
 const connectDB = async () => {
