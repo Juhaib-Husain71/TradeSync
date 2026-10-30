@@ -29,7 +29,7 @@ const Menu = ({user}) => {
   const logout = async() => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3001/users/logout",
+        "https://tradesync-ikxa.onrender.com/users/logout",
         {},
         { withCredentials: true }
       );
@@ -38,7 +38,7 @@ const Menu = ({user}) => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.replace("http://localhost:5173");
+          window.location.replace("https://tradesync-login.vercel.app");
         }, 1000);
 
       } else {
@@ -94,7 +94,6 @@ const Menu = ({user}) => {
         <hr />
         <div className="profile" onClick={handleProfileClick}> 
           <div className="avatar"><p style={{paddingBottom: "4px"}}>{user?.username.trim()[0]}</p></div>
-          {/* <p className="username">{user?.username}</p> */}
         </div>
       </div>
 

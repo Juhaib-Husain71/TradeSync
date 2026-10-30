@@ -12,7 +12,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = () => {
     axios.post(
-      "http://localhost:3001/orders",
+      "https://tradesync-ikxa.onrender.com/orders",
         {
           name: uid,
           qty: stockQuantity,

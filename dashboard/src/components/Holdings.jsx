@@ -1,4 +1,3 @@
-// import { holdings } from "../data/data.js";
 import { VerticalGraph } from "./VerticalGraph";
 
 const Holdings = ({allHoldings, totalInvestment, currentValue, totalPnL, pnlPercentage, pnlClass}) => {
@@ -61,14 +60,12 @@ const Holdings = ({allHoldings, totalInvestment, currentValue, totalPnL, pnlPerc
       <div className="row">
         <div className="col">
           <span style={{fontSize: "1.75rem"}}>
-            {/* 29,875.<span>55</span>{" "} */}
             {totalInvestment.toFixed(2)}
           </span>
           <p style={{fontSize: "1rem"}}>Total investment</p>
         </div>
         <div className="col">
             <span style={{fontSize: "1.75rem"}}>
-            {/* 31,428.<span>95</span>{" "} */}
             {currentValue.toFixed(2)}
             </span>
           <p style={{fontSize: "1rem"}}>Current value</p>

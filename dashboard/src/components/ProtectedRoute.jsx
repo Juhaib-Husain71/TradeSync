@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import SkeletonCard from "./SkeletonCard";
 import DashboardSkeleton from "./DashboardSkeleton";
 
 function ProtectedRoute({ children }) {
@@ -8,7 +7,7 @@ function ProtectedRoute({ children }) {
     const [authenticated, setAuthenticated] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:3001/users/me", {
+        axios.get("https://tradesync-ikxa.onrender.com/users/me", {
                 withCredentials: true,
             })
             .then(() => {
@@ -27,7 +26,7 @@ function ProtectedRoute({ children }) {
     }
 
     if (!authenticated) {
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = "https://tradesync-login.vercel.app/login";
         return null;
     }
 

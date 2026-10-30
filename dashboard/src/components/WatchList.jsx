@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from "react";
 import { BarChartOutlined, KeyboardArrowDown, KeyboardArrowUp, MoreHoriz } from "@mui/icons-material";
 
 import { Tooltip, Grow } from "@mui/material";
-// import { watchlist } from "../data/data.js";
 import GeneralContext from "./GeneralContext.jsx";
 import { DoughnoutChart } from "./DoughnoutChart.jsx";
 import axios from "axios";
@@ -10,7 +9,7 @@ import axios from "axios";
 const WatchList = () => {
   const [allWatchlists, setAllWatchlists] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:3001/watchlists", {
+    axios.get("https://tradesync-ikxa.onrender.com/watchlists", {
       withCredentials: true,
     }).then((res)=>{
       setAllWatchlists(res.data);

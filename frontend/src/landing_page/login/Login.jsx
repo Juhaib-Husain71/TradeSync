@@ -47,7 +47,7 @@ function Login() {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:3001/users/login",
+                "https://tradesync-ikxa.onrender.com/users/login",
                 {
                 ...inputValue,
                 },
@@ -58,7 +58,7 @@ function Login() {
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => {
-                    window.location.replace("http://localhost:5174");
+                    window.location.replace("https://tradesync-dashboard.vercel.app");
                 }, 1000);
             } else {
                 handleError(message);

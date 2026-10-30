@@ -6,7 +6,7 @@ const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/orders", {
+    axios.get("https://tradesync-ikxa.onrender.com/orders", {
         withCredentials: true,
     }).then((res)=>{
       setAllOrders(res.data);

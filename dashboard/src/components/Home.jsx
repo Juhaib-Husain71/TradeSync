@@ -11,7 +11,7 @@ const Home = () => {
     const getUser = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:3001/users/me",
+          "https://tradesync-ikxa.onrender.com/users/me",
           {
             withCredentials: true,
           }
@@ -19,7 +19,7 @@ const Home = () => {
   
         setUser(data.user);
       } catch (err) {
-          window.location.href = "http://localhost:5173/login";
+          window.location.href = "https://tradesync-login.vercel.app/login";
       }
     };
   

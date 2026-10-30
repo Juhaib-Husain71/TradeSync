@@ -16,7 +16,7 @@ const Dashboard = ({user}) => {
     const [allHoldings, setAllHoldings] = useState([]);
 
     useEffect(()=>{
-      axios.get("http://localhost:3001/holdings", {
+      axios.get("https://tradesync-ikxa.onrender.com/holdings", {
           withCredentials: true,
         }
       ).then((res) => {

@@ -1,4 +1,3 @@
-// import { positions } from "../data/data";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -7,7 +6,7 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/positions", {
+    axios.get("https://tradesync-ikxa.onrender.com/positions", {
         withCredentials: true,
     }).then((res)=>{
       setAllPositions(res.data);
