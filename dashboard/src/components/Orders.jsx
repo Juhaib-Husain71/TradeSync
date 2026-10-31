@@ -6,7 +6,7 @@ const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("https://tradesync-ikxa.onrender.com/orders", {
+    axios.get(`${import.meta.env.VITE_API_URL}/orders`, {
         withCredentials: true,
     }).then((res)=>{
       setAllOrders(res.data);

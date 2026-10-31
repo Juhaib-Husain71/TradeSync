@@ -7,7 +7,7 @@ function ProtectedRoute({ children }) {
     const [authenticated, setAuthenticated] = useState(false);
 
     useEffect(() => {
-        axios.get("https://tradesync-ikxa.onrender.com/users/me", {
+        axios.get(`${import.meta.env.VITE_API_URL}/users/me`, {
                 withCredentials: true,
             })
             .then(() => {
@@ -26,7 +26,7 @@ function ProtectedRoute({ children }) {
     }
 
     if (!authenticated) {
-        window.location.href = "https://tradesync-login.vercel.app/login";
+        window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
         return null;
     }
 

@@ -29,7 +29,7 @@ const Menu = ({user}) => {
   const logout = async() => {
     try {
       const { data } = await axios.post(
-        "https://tradesync-ikxa.onrender.com/users/logout",
+        `${import.meta.env.VITE_API_URL}/users/logout`,
         {},
         { withCredentials: true }
       );
@@ -38,7 +38,7 @@ const Menu = ({user}) => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.replace("https://tradesync-login.vercel.app");
+          window.location.replace(`${import.meta.env.VITE_FRONTEND_URL}`);
         }, 1000);
 
       } else {

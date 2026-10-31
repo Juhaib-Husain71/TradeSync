@@ -16,7 +16,7 @@ const Dashboard = ({user}) => {
     const [allHoldings, setAllHoldings] = useState([]);
 
     useEffect(()=>{
-      axios.get("https://tradesync-ikxa.onrender.com/holdings", {
+      axios.get(`${import.meta.env.VITE_API_URL}/holdings`, {
           withCredentials: true,
         }
       ).then((res) => {

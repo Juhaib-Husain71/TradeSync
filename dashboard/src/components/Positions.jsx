@@ -6,7 +6,7 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("https://tradesync-ikxa.onrender.com/positions", {
+    axios.get(`${import.meta.env.VITE_API_URL}/positions`, {
         withCredentials: true,
     }).then((res)=>{
       setAllPositions(res.data);

@@ -12,7 +12,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = () => {
     axios.post(
-      "https://tradesync-ikxa.onrender.com/orders",
+      `${import.meta.env.VITE_API_URL}/orders`,
         {
           name: uid,
           qty: stockQuantity,

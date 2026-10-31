@@ -9,7 +9,7 @@ import axios from "axios";
 const WatchList = () => {
   const [allWatchlists, setAllWatchlists] = useState([]);
   useEffect(()=>{
-    axios.get("https://tradesync-ikxa.onrender.com/watchlists", {
+    axios.get(`${import.meta.env.VITE_API_URL}/watchlists`, {
       withCredentials: true,
     }).then((res)=>{
       setAllWatchlists(res.data);
