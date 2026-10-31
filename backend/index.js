@@ -21,7 +21,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors(
   {
-    origin: ["https://tradesync-login.vercel.app", "https://tradesync-dashboard.vercel.app"],
+    origin: ["https://tradesync-mu.vercel.app", "https://tradesync-dashboard.vercel.app"],
     credentials: true,
   }
 ))   //^to connect dashboard with backend
