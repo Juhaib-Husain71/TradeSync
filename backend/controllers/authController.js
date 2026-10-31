@@ -15,11 +15,13 @@ module.exports.Signup = async (req, res, next) => {
       httpOnly: true,
       maxAge: 3 * 24 * 60 * 60 * 1000,
       sameSite: "none",
+      secure: true
     });
     res
       .status(201)
       .json({ message: "User signed in successfully", success: true, user });
-    next();
+
+    // next(); //is used to pass control to the next specified middleware
   } catch (error) {
     console.error(error);
   }
@@ -45,9 +47,10 @@ module.exports.Login = async (req, res, next) => {
       httpOnly: true,
       maxAge: 3 * 24 * 60 * 60 * 1000,
       sameSite: "none",
+      secure: true
      });
      res.status(201).json({ message: "User logged in successfully", success: true });
-     next()
+
   } catch (error) {
     console.error(error);
   }
@@ -58,7 +61,7 @@ module.exports.Logout = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     sameSite: "none",
-
+    secure: true
   });
 
   res.status(200).json({
@@ -82,5 +85,4 @@ module.exports.getMe = async (req, res) => {
     success: true,
     user,
   });
-
 }
